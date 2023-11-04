@@ -56,7 +56,11 @@ elif thing_to_do == 'install':
 				print(str(v) + ": " + i['name'])
 				v += 1
 
-			answer = input("which one: ")
+			answer = input("which one? (type 'x' to cancel): ")
+
+			if answer == "x":
+				print("cancelled")
+				exit()
 
 			print("downloading...")
 			mod_name_with_version = versions_json[int(answer)]['name']
