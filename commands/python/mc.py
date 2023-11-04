@@ -2,9 +2,12 @@ import requests
 import sys
 import os
 
-if len(sys.argv) == 1:
-	print("mc <command> [args]\n\ncommands:\n  install <modrinth mod name>:\n  installs a mod off of modrinth and puts it into your mods folder\n  ex:\n    mc install sodium\n\n  update:\n    checks for updates in the program")
+def explain():
+	print("\nmc <command> [args]\n\ncommands:\n  install <modrinth project name>:\n    installs a mod/resource pack off of modrinth and puts it into your mods/resource packs folder\n    ex:\n      mc install sodium\n\n  update:\n    checks for updates in the program")
 	exit()
+
+if len(sys.argv) == 1:
+	explain()
 
 thing_to_do = sys.argv[1]
 
@@ -23,14 +26,17 @@ if thing_to_do == 'update':
 		f = open("..\\version.txt", "w")
 		f.write(newest_update)
 		f.close()
+		print("up to date")
 	elif version != newest_update:
-		answer = input("a new version is available, would you like to install? (y/n)\n")
+		answer = input("a new version is available, would you like to download? (y/n)\n")
 		if answer == 'y':
 			newest_version = requests.get("https://codeload.github.com/be4ryllium/mod-installer/zip/refs/heads/master").content
 			with open("..\\newest.zip", mode="wb") as f:
 				f.write(newest_version)
 		else:
 			print("ok")
+	else:
+		print("up to date")
 
 elif thing_to_do == 'install':
 
@@ -50,7 +56,7 @@ elif thing_to_do == 'install':
 		v = 0
 		for i in mod_json:
 			print(str(v) + ": " + i['name'] + "  -  " + i['version_number'])
-		v += 1
+			v += 1
 
 		answer = input("which one? (type 'x' to cancel): ")
 
@@ -91,3 +97,5 @@ elif thing_to_do == 'install':
 					print("done. saved to " + res_folder_location + "\\" + mod_jar_name)
 					jar.close()
 				f.close()
+else:
+	explain()
