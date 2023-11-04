@@ -7,7 +7,8 @@ it runs on python so you have to install that from <a href="https://www.python.o
 
 # installation
 
-this only works on windows because i dont feel like learning linux or mac
-just download the code as a .zip and extract
+this only works on windows because i dont feel like learning linux or mac<br>just download the code as a .zip and extract
 
-on first time installs just  execute "first_time_install.bat" (make sure the folder is in the directory you want because thats how the command thing works and if you )
+on first time installs just  execute "first_time_install" (make sure the folder is in the directory you want because thats how the command thing works and if you move the folder it wont work any more)
+
+you can change your mods folder directory in the "mods_folder_directory" text file (only the first line please)
