@@ -12,3 +12,9 @@ this only works on windows because i dont feel like learning linux or mac<br>jus
 on first time installs just  execute "first_time_install" (make sure the folder is in the directory you want because thats how the command thing works and if you move the folder it wont work any more)
 
 you can change your mods folder directory in the "mods_folder_directory" text file (only the first line please)<br>and your resource pack folder directory in the "resource_pack_folder_directory" text file
+
+# usage
+
+to install a mod or resource pack, type "mc install <name of project>" into the terminal.
+
+type "mc" to get a list of commands

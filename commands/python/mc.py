@@ -55,7 +55,12 @@ elif thing_to_do == 'install':
 
 		v = 0
 		for i in mod_json:
-			print(str(v) + ": " + i['name'] + "  -  " + i['version_number'])
+			versions_string = ''
+			for g in i['game_versions']:
+				versions_string += g + ", "
+			if versions_string != '':
+				versions_string = versions_string[0:len(versions_string)-2]
+			print(str(v) + ": " + i['name'] + "    -    " + versions_string)
 			v += 1
 
 		answer = input("which one? (type 'x' to cancel): ")
