@@ -15,6 +15,6 @@ you can change your mods folder directory in the "mods_folder_directory" text fi
 
 # usage
 
-to install a mod or resource pack, type "mc install <name of project>" into the terminal.
+to install a mod or resource pack, type "mc install &lt;name of project&gt;" into the terminal.
 
 type "mc" to get a list of commands
