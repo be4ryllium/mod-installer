@@ -22,7 +22,7 @@ def install(mod_name = None, dep_only = None):
 		for i in sys.argv[3:len(sys.argv)]:
 			if i == '-dep' and dep_only == None:
 				dep_only = True
-				print("only getting dependencies from mod...")
+				print("only getting dependencies from mod")
 
 	print("getting from modrinth...")
 
@@ -84,6 +84,8 @@ def install(mod_name = None, dep_only = None):
 					exit()
 				elif answer == 'n':
 					print("ok")
+			print("all dependencies looked at")
+			exit()
 
 		print("downloading...")
 		browser_download_url = mod_json[int(answer)]['files'][0]['url']
